@@ -3,6 +3,9 @@ import HomeLayout from "../layouts/HomeLayout";
 import ErrorPage from "../layouts/ErrorPage";
 import HomePage from "../pages/HomePage";
 import PricingDetails from "../pages/PricingDetails";
+import SignInPage from "../pages/SignInPage";
+import SignUpPage from "../pages/SignUpPage";
+import AuthenticationLayout from "../layouts/AuthenticationLayout";
 
 const router = createBrowserRouter([
   {
@@ -21,13 +24,24 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         loader: () => fetch("/data/pricingCard.json"),
       },
-      {
-        path: "auth",
-        element: <h1>Auth</h1>,
-      },
+
       {
         path: "about",
         element: <h1>About</h1>,
+      },
+    ],
+  },
+  {
+    path: "/auth",
+    element: <AuthenticationLayout />,
+    children: [
+      {
+        path: "/auth/sign-in",
+        element: <SignInPage />,
+      },
+      {
+        path: "/auth/sign-up",
+        element: <SignUpPage />,
       },
     ],
   },

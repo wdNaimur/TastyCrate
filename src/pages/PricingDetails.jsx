@@ -36,12 +36,12 @@ const CrateDetails = () => {
           <div className="mt-8">
             <h2 className="text-xl font-semibold mb-3">What’s Included</h2>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {crate.features.map((f, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <span className="text-secondary mt-1">
-                    <TiTick />
+              {crate.features.map((feature, index) => (
+                <li key={index} className="flex items-center gap-2">
+                  <span className="text-secondary ">
+                    <TiTick size={20} />
                   </span>
-                  <span>{f}</span>
+                  <span>{feature}</span>
                 </li>
               ))}
             </ul>
