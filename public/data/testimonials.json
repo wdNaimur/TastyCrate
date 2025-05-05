@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Arefin Rahman",
+    "title": "Food Blogger",
+    "testimonial": "Tastycrate is the best part of my month! I love discovering snacks I’d never find locally.",
+    "image": "/testimonial/arefin-rahman.png"
+  },
+  {
+    "id": 2,
+    "name": "Priya Sultana",
+    "title": "Student",
+    "testimonial": "I got this as a gift and now I’m hooked. Every box is a delicious surprise!",
+    "image": "/testimonial/priya-sultana.png"
+  },
+  {
+    "id": 3,
+    "name": "Jahangir Alam",
+    "title": "Father of Two",
+    "testimonial": "Perfect for our movie nights—tasty, unique, and fun to try as a family.",
+    "image": "/testimonial/jahangir-alam.png"
+  },
+  {
+    "id": 4,
+    "name": "Sadia Jahan",
+    "title": "Travel Enthusiast",
+    "testimonial": "As someone who loves global flavors, this box is a dream. It's like travel in a snack!",
+    "image": "/testimonial/sadia-jahan.png"
+  },
+  {
+    "id": 5,
+    "name": "Rafiul Hasan",
+    "title": "Design Student",
+    "testimonial": "Honestly? Worth every penny. The packaging is cute and the snacks are top-tier.",
+    "image": "/testimonial/rafiul-hasan.png"
+  },
+  {
+    "id": 6,
+    "name": "Tanjina Akter",
+    "title": "Health-Conscious Eater",
+    "testimonial": "I'm gluten-free and was shocked to see so many options I could actually enjoy.",
+    "image": "/testimonial/tanjina-akter.png"
+  },
+  {
+    "id": 7,
+    "name": "Mehjabin Nahar",
+    "title": "New Subscriber",
+    "testimonial": "Customer service is amazing, and the snacks are even better.",
+    "image": "/testimonial/mehjabin-nahar.png"
+  },
+  {
+    "id": 8,
+    "name": "Nafis Chowdhury",
+    "title": "Seasonal Subscriber",
+    "testimonial": "The winter box blew me away. I already can’t wait for the spring edition!",
+    "image": "/testimonial/nafis-chowdhury.png"
+  },
+  {
+    "id": 9,
+    "name": "Sharmeen Yasmin",
+    "title": "Gifter",
+    "testimonial": "I subscribed for myself but ended up gifting it to three friends too. They all love it.",
+    "image": "/testimonial/sharmeen-yasmin.png"
+  },
+  {
+    "id": 10,
+    "name": "Fahim Hossain",
+    "title": "Long-time Customer",
+    "testimonial": "Tastycrate is the only subscription I’ve kept for over a year. That says it all.",
+    "image": "/testimonial/fahim-hossain.png"
+  }
+]

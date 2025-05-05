@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Basic Crate",
+    "slug": "basic-crate",
+    "price": "$19.99",
+    "frequency": "/month",
+    "tag": "Starter Plan",
+    "image": "/images/basic-crate.png",
+    "description": "Perfect for solo snackers or first-time subscribers who want a monthly treat without breaking the bank.",
+    "features": [
+      "1× daily delivery",
+      "5 snacks, 1 dessert",
+      "Standard shipping",
+      "Eco packaging",
+      "Email support",
+      "Cancel anytime"
+    ],
+    "details": [
+      "Curated by nutrition experts",
+      "Perfect for light snacking",
+      "Balanced sweet and salty items",
+      "Ships within 3–5 business days"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Standard Crate",
+    "slug": "standard-crate",
+    "price": "$34.99",
+    "frequency": "/month",
+    "tag": "Most Popular",
+    "image": "/images/standard-crate.png",
+    "description": "Ideal for snack lovers who enjoy variety and an occasional surprise with every box.",
+    "features": [
+      "2× daily delivery",
+      "10 snacks, 2 desserts",
+      "Free shipping",
+      "Priority support",
+      "Reusable packaging",
+      "Earn rewards"
+    ],
+    "details": [
+      "Includes surprise gift",
+      "Mix of local and international snacks",
+      "Hand-packed with care",
+      "Customer favorites included monthly"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Premium Crate",
+    "slug": "premium-crate",
+    "price": "$49.99",
+    "frequency": "/month",
+    "tag": "Best Value",
+    "image": "/images/premium-crate.png",
+    "description": "Designed for families or foodies who crave a luxurious selection of gourmet snacks and exclusive perks.",
+    "features": [
+      "3× daily delivery",
+      "15 snacks, 4 desserts",
+      "Express shipping",
+      "24/7 support",
+      "VIP access",
+      "Gift-ready box"
+    ],
+    "details": [
+      "Exclusive access to limited edition items",
+      "Includes member-only perks and samples",
+      "Perfect for gifting or group sharing",
+      "Fastest shipping option included"
+    ]
+  }
+]
