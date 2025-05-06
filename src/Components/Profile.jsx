@@ -24,11 +24,12 @@ const Profile = ({ user }) => {
           <div className="w-10 rounded-full border-2 border-secondary">
             <img
               alt="Tailwind CSS Navbar component"
-              src={`${
-                user.photoURL
-                  ? user.photoURL
-                  : "https://img.icons8.com/?size=100&id=tZuAOUGm9AuS&format=png&color=000000"
-              }`}
+              src={`
+                ${
+                  user.photoURL
+                    ? user.photoURL
+                    : "https://img.icons8.com/?size=100&id=tZuAOUGm9AuS&format=png&color=000000"
+                }`}
             />
           </div>
         </div>
@@ -37,7 +38,7 @@ const Profile = ({ user }) => {
           className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
         >
           <li>
-            <a>Profile</a>
+            <a>{user.displayName ? user.displayName : "Profile"}</a>
           </li>
           <li>
             <a>Settings</a>

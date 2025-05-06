@@ -1,14 +1,16 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import ErrorText from "../UI/ErrorText";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const SignUpPage = () => {
-  const { createUser, setUser, updateUser } = useContext(AuthContext);
+  const { createUser, setUser, updateUser, googleSignIn } =
+    useContext(AuthContext);
   const [nameError, setNameError] = useState("");
   const [errorPassword, setErrorPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
   const handleTogglePassword = () => {
     return setShowPassword(!showPassword);
   };
@@ -57,6 +59,16 @@ const SignUpPage = () => {
         console.error("Error:", error.code, error.message);
       });
   };
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((res) => {
+        const user = res.user;
+        navigate(`${location.state ? location.state : "/"}`);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <div className="container mx-auto flex gap-10 items-center justify-center select-none">
@@ -71,7 +83,7 @@ const SignUpPage = () => {
             <input
               name="name"
               type="text"
-              className="input input-bordered w-full"
+              className="input border-none bg-primary/10 w-full focus:outline-primary/40"
               placeholder="Name"
               required
             />
@@ -82,7 +94,7 @@ const SignUpPage = () => {
             <input
               name="url"
               type="url"
-              className="input input-bordered w-full"
+              className="input border-none bg-primary/10 w-full focus:outline-primary/40"
               placeholder="Photo URL"
               required
             />
@@ -91,7 +103,7 @@ const SignUpPage = () => {
             <input
               name="email"
               type="email"
-              className="input input-bordered w-full"
+              className="input border-none bg-primary/10 w-full focus:outline-primary/40"
               placeholder="Email"
               required
             />
@@ -101,7 +113,7 @@ const SignUpPage = () => {
               <input
                 name="password"
                 type={showPassword ? "text" : "password"}
-                className="input w-full"
+                className="input border-none bg-primary/10 w-full focus:outline-primary/40"
                 placeholder="Password"
               />
               <a
@@ -117,7 +129,7 @@ const SignUpPage = () => {
             <input
               name="confirmPassword"
               type="password"
-              className="input input-bordered w-full"
+              className="input border-none bg-primary/10 w-full focus:outline-primary/40"
               placeholder="Confirm Password"
               required
             />
@@ -128,6 +140,41 @@ const SignUpPage = () => {
             >
               Sign Up
             </button>
+            <div className="pt-5 border-secondary/40 border-t-2 border-dashed mt-4 ">
+              <a
+                onClick={handleGoogleSignIn}
+                className="btn bg-white text-black border-secondary/20 shadow-sm shadow-secondary/20 w-full"
+              >
+                <svg
+                  aria-label="Google logo"
+                  width="16"
+                  height="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                >
+                  <g>
+                    <path d="m0 0H512V512H0" fill="#fff"></path>
+                    <path
+                      fill="#34a853"
+                      d="M153 292c30 82 118 95 171 60h62v48A192 192 0 0190 341"
+                    ></path>
+                    <path
+                      fill="#4285f4"
+                      d="m386 400a140 175 0 0053-179H260v74h102q-7 37-38 57"
+                    ></path>
+                    <path
+                      fill="#fbbc02"
+                      d="m90 341a208 200 0 010-171l63 49q-12 37 0 73"
+                    ></path>
+                    <path
+                      fill="#ea4335"
+                      d="m153 219c22-69 116-109 179-50l55-54c-78-75-230-72-297 55"
+                    ></path>
+                  </g>
+                </svg>
+                Sign In with Google
+              </a>
+            </div>
 
             <div className="text-sm pt-4 text-center">
               <p>
