@@ -6,7 +6,7 @@ const AuthenticationLayout = () => {
   return (
     <div className="min-h-[90vh]">
       <Navbar />
-      <div className="mt-30 mb-20">
+      <div className="pt-30 pb-15">
         <Outlet />
       </div>
     </div>

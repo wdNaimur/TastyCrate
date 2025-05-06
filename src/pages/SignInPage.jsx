@@ -31,8 +31,8 @@ const SignInPage = () => {
   };
 
   return (
-    <div className="container mx-auto flex h-[70vh] gap-10 items-center justify-center">
-      <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+    <div className="container mx-auto flex justify-center">
+      <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl border-secondary/5 border-2">
         <div className="card-body">
           <div>
             <h2 className="text-4xl font-bold lg:text-5xl text-primary">
