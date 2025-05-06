@@ -2,11 +2,16 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import ErrorText from "../UI/ErrorText";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const SignUpPage = () => {
   const { createUser, setUser, updateUser } = useContext(AuthContext);
   const [nameError, setNameError] = useState("");
   const [errorPassword, setErrorPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const handleTogglePassword = () => {
+    return setShowPassword(!showPassword);
+  };
   const handleSignUp = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -54,7 +59,7 @@ const SignUpPage = () => {
   };
 
   return (
-    <div className="container mx-auto flex gap-10 items-center justify-center">
+    <div className="container mx-auto flex gap-10 items-center justify-center select-none">
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
         <div className="card-body">
           <h2 className="text-4xl font-bold lg:text-5xl text-primary">
@@ -92,13 +97,20 @@ const SignUpPage = () => {
             />
             {/* Password */}
             <label className="label text-primary">Password</label>
-            <input
-              name="password"
-              type="password"
-              className="input input-bordered w-full"
-              placeholder="Password"
-              required
-            />
+            <div className="relative">
+              <input
+                name="password"
+                type={showPassword ? "text" : "password"}
+                className="input w-full"
+                placeholder="Password"
+              />
+              <a
+                onClick={handleTogglePassword}
+                className="absolute right-4 cursor-pointer top-1/2 z-50 -translate-y-[50%]"
+              >
+                {showPassword ? <FaEye size={18} /> : <FaEyeSlash size={18} />}
+              </a>
+            </div>
             {errorPassword && <ErrorText>{errorPassword}</ErrorText>}
             {/* Confirm Password */}
             <label className="label text-primary">Confirm Password</label>

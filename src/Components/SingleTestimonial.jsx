@@ -3,7 +3,7 @@ import { FaQuoteRight } from "react-icons/fa";
 
 const SingleTestimonial = ({ data }) => {
   return (
-    <div className="px-4">
+    <div className="px-4 cursor-default">
       <div className="p-6 rounded shadow-md dark:bg-gray-50">
         <div className="flex justify-between items-center mb-5">
           <div className="flex items-center mt-4 space-x-4">
