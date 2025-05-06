@@ -6,6 +6,8 @@ import PricingDetails from "../pages/PricingDetails";
 import SignInPage from "../pages/SignInPage";
 import SignUpPage from "../pages/SignUpPage";
 import AuthenticationLayout from "../layouts/AuthenticationLayout";
+import PrivateRoute from "../provider/PrivateRoute";
+import Loader from "../Components/Loader";
 
 const router = createBrowserRouter([
   {
@@ -17,12 +19,17 @@ const router = createBrowserRouter([
         index: true,
         element: <HomePage />,
         loader: () => fetch("/data/testimonials.json"),
+        hydrateFallbackElement: <Loader />,
       },
       {
         path: "pricing/:slug",
-        element: <PricingDetails />,
-        errorElement: <ErrorPage />,
+        element: (
+          <PrivateRoute>
+            <PricingDetails />
+          </PrivateRoute>
+        ),
         loader: () => fetch("/data/pricingCard.json"),
+        hydrateFallbackElement: <Loader />,
       },
 
       {
