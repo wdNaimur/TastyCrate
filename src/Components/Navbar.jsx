@@ -16,6 +16,11 @@ const navLink = (
         About
       </NavLink>
     </li>
+    <li className="text-lg">
+      <NavLink to="/profile" className="hover:bg-primary/30 px-3 py-2 rounded">
+        Profile
+      </NavLink>
+    </li>
   </>
 );
 

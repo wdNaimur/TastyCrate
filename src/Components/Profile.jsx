@@ -1,5 +1,6 @@
 import React, { use } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import { Link } from "react-router";
 
 const Profile = ({ user }) => {
   const handleSignOut = () => {
@@ -26,15 +27,18 @@ const Profile = ({ user }) => {
             className="btn btn-circle avatar shadow-none hover:shadow-none hover:scale-105 transition-all ease-linear "
           >
             <div className="w-10 rounded-full border-2 border-secondary relative  shadow-none hover:shadow-none">
-              <img
-                alt="Profile"
-                src={`
+              <Link to="/profile">
+                {" "}
+                <img
+                  alt="Profile"
+                  src={`
                 ${
                   user.photoURL
                     ? user.photoURL
                     : "https://img.icons8.com/?size=100&id=tZuAOUGm9AuS&format=png&color=000000"
                 }`}
-              />
+                />
+              </Link>
             </div>
           </div>
         </div>
@@ -44,18 +48,6 @@ const Profile = ({ user }) => {
         >
           Sign Out
         </button>
-
-        <ul
-          tabIndex={0}
-          className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 absolute top-12"
-        >
-          <li>
-            <a>{user.displayName ? user.displayName : "Profile"}</a>
-          </li>
-          <li>
-            <a>Settings</a>
-          </li>
-        </ul>
       </div>
     </div>
   );

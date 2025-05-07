@@ -4,12 +4,13 @@ import Button from "../UI/Button";
 import { TiTick } from "react-icons/ti";
 import StarRating from "../UI/StarRating";
 import { useEffect, useState } from "react";
-import { FaComment, FaStar, FaThinkPeaks } from "react-icons/fa";
+import { FaComment, FaStar } from "react-icons/fa";
 
 const PricingDetails = () => {
   useEffect(() => {
     document.title = "Tastycrate | Pricing Details";
   }, []);
+
   const [selectedRating, setSelectedRating] = useState(null);
   const [submitted, setSubmitted] = useState(false);
   const [reviewText, setReviewText] = useState("");

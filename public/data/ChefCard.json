@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "chefName": "Chef Nusrat Jahan",
+    "crate": "Basic Crate",
+    "description": "Chef Nusrat picks light, comforting treats—perfect for solo snackers or late-night bites. Her box offers a smooth and cozy snacking experience monthly.",
+    "chefImage": "/images/chefs/nusrat.jpg"
+  },
+  {
+    "id": 2,
+    "chefName": "Chef Arif Hossain",
+    "crate": "Basic Crate",
+    "description": "A minimal, mindful selection curated by Chef Arif for everyday enjoyment—this crate balances simplicity and taste in every snack-packed monthly delivery.",
+    "chefImage": "/images/chefs/arif.jpg"
+  },
+  {
+    "id": 3,
+    "chefName": "Chef Tamanna Rahman",
+    "crate": "Standard Crate",
+    "description": "Chef Tamanna adds bold flavors and monthly surprises to elevate your routine—each crate mixes exciting, flavorful twists with everyday favorites you’ll love.",
+    "chefImage": "/images/chefs/tamanna.jpg"
+  },
+  {
+    "id": 4,
+    "chefName": "Chef Shafiq Ahmed",
+    "crate": "Standard Crate",
+    "description": "A variety-packed crate by Chef Shafiq blends local and global flavors to delight curious snackers. His box invites adventurous palates to explore.",
+    "chefImage": "/images/chefs/shafiq.jpg"
+  },
+  {
+    "id": 5,
+    "chefName": "Chef Rumi Akter",
+    "crate": "Premium Crate",
+    "description": "Chef Rumi brings gourmet indulgence with personal flair—her premium crate blends sweet, savory, and luxurious elements for a monthly  snack journey.",
+    "chefImage": "/images/chefs/rumi.jpg"
+  },
+  {
+    "id": 6,
+    "chefName": "Chef Saifur Rahman",
+    "crate": "Premium Crate",
+    "description": "A rich, curated selection by Chef Saifur made for foodies who crave top-tier bites. Expect bold, diverse, and high-quality flavors packed into every crate.",
+    "chefImage": "/images/chefs/saifur.jpg"
+  }
+]

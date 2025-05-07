@@ -8,7 +8,7 @@ const Testimonials = () => {
   const testimonialData = useLoaderData();
 
   return (
-    <div className="py-20">
+    <>
       <SectionHeading
         subHeading="Testimonial"
         heading="What our customers say"
@@ -18,7 +18,7 @@ const Testimonials = () => {
           <SingleTestimonial key={data.id} data={data} />
         ))}
       </Marquee>
-    </div>
+    </>
   );
 };
 

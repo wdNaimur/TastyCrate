@@ -12,3 +12,8 @@ const SectionHeading = ({ subHeading, heading }) => {
 };
 
 export default SectionHeading;
+
+{
+  /****use*****/
+  /* <SectionHeading subHeading="PRICING" heading="Choose your best plan" /> */
+}

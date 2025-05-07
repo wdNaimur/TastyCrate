@@ -7,6 +7,7 @@
     "frequency": "/month",
     "tag": "Starter Plan",
     "image": "/images/basic-crate.png",
+    "titleImage": "/images/basic-title.png",
     "description": "Perfect for solo snackers or first-time subscribers who want a monthly treat without breaking the bank.",
     "features": [
       "1× daily delivery",
@@ -31,6 +32,7 @@
     "frequency": "/month",
     "tag": "Most Popular",
     "image": "/images/standard-crate.png",
+    "titleImage": "/images/standard-title.png",
     "description": "Ideal for snack lovers who enjoy variety and an occasional surprise with every box.",
     "features": [
       "2× daily delivery",
@@ -55,6 +57,7 @@
     "frequency": "/month",
     "tag": "Best Value",
     "image": "/images/premium-crate.png",
+    "titleImage": "/images/premium-title.png",
     "description": "Designed for families or foodies who crave a luxurious selection of gourmet snacks and exclusive perks.",
     "features": [
       "3× daily delivery",

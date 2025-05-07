@@ -3,11 +3,13 @@ import { AuthContext } from "../provider/AuthProvider";
 import { Link, useNavigate } from "react-router";
 import { useLocation } from "react-router";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { toast, ToastContainer } from "react-toastify";
 
 const SignInPage = () => {
   useEffect(() => {
     document.title = "Tastycrate | Sign In";
   }, []);
+
   const { userSignIn, googleSignIn } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -16,6 +18,12 @@ const SignInPage = () => {
   };
 
   const location = useLocation();
+  console.log(location);
+  useEffect(() => {
+    if (location.state?.fromPrivateRoute) {
+      toast.warning("This is a private route. Please sign in.");
+    }
+  }, [location]);
   const navigate = useNavigate();
   const handleSignIn = (e) => {
     e.preventDefault();
@@ -25,7 +33,7 @@ const SignInPage = () => {
     userSignIn(email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        navigate(`${location.state ? location.state : "/"}`);
+        navigate(location.state?.from || "/");
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -36,7 +44,7 @@ const SignInPage = () => {
     googleSignIn()
       .then((res) => {
         const user = res.user;
-        navigate(`${location.state ? location.state : "/"}`);
+        navigate(`${location.state ? location.state.from : "/"}`);
       })
       .catch((error) => {
         console.log(error);
@@ -45,6 +53,7 @@ const SignInPage = () => {
 
   return (
     <div className="container mx-auto flex justify-center select-none">
+      <ToastContainer />
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl border-secondary/5 border-2">
         <div className="card-body">
           <div>
