@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { Link } from "react-router";
 
 const ErrorPage = () => {
+  useEffect(() => {
+    document.title = "Tastycrate | Error";
+  }, []);
   return (
     <div className="min-h-[90vh] my-auto flex  justify-center items-center">
       <div>

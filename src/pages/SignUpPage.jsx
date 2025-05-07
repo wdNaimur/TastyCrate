@@ -1,10 +1,13 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import ErrorText from "../UI/ErrorText";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const SignUpPage = () => {
+  useEffect(() => {
+    document.title = "Tastycrate | Sign Up";
+  }, []);
   const { createUser, setUser, updateUser, googleSignIn } =
     useContext(AuthContext);
   const [nameError, setNameError] = useState("");

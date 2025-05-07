@@ -3,10 +3,13 @@ import ErrorPage from "../layouts/ErrorPage";
 import Button from "../UI/Button";
 import { TiTick } from "react-icons/ti";
 import StarRating from "../UI/StarRating";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaComment, FaStar, FaThinkPeaks } from "react-icons/fa";
 
 const PricingDetails = () => {
+  useEffect(() => {
+    document.title = "Tastycrate | Pricing Details";
+  }, []);
   const [selectedRating, setSelectedRating] = useState(null);
   const [submitted, setSubmitted] = useState(false);
   const [reviewText, setReviewText] = useState("");
@@ -108,7 +111,7 @@ const PricingDetails = () => {
                     name="review"
                     placeholder="Your Thoughts"
                     required
-                    className="w-full text-primary bg-primary/10 px-5 py-3 rounded-md resize-none"
+                    className="w-full text-primary bg-primary/10 px-5 py-3 rounded-md resize-none focus:outline-primary/40"
                   />
                 </div>
                 <button type="submit">

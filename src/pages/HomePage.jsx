@@ -1,9 +1,12 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import Hero from "../Components/Hero";
 import Testimonials from "../Components/Testimonials";
 import PricingCard from "../Components/PricingCard";
 
 const HomePage = () => {
+  useEffect(() => {
+    document.title = "Tastycrate | Home";
+  }, []);
   return (
     <main>
       <section>

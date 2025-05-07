@@ -1,10 +1,13 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link, useNavigate } from "react-router";
 import { useLocation } from "react-router";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const SignInPage = () => {
+  useEffect(() => {
+    document.title = "Tastycrate | Sign In";
+  }, []);
   const { userSignIn, googleSignIn } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
