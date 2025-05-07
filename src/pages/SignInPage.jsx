@@ -79,7 +79,13 @@ const SignInPage = () => {
 
             <div className="space-y-1">
               {error && <p className="text-red-700">{error}</p>}
-              <a className="link link-hover text-primary">Forgot password?</a>
+
+              <Link
+                to="/auth/forgot-password"
+                className="link link-hover text-primary"
+              >
+                Forgot password?
+              </Link>
             </div>
             <button
               type="submit"

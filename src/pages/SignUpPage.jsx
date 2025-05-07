@@ -8,44 +8,69 @@ const SignUpPage = () => {
   useEffect(() => {
     document.title = "Tastycrate | Sign Up";
   }, []);
+
   const { createUser, setUser, updateUser, googleSignIn } =
     useContext(AuthContext);
+
   const [nameError, setNameError] = useState("");
   const [errorPassword, setErrorPassword] = useState("");
+  const [confirmPasswordError, setConfirmPasswordError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [passwordInput, setPasswordInput] = useState("");
   const navigate = useNavigate();
-  const handleTogglePassword = () => {
-    return setShowPassword(!showPassword);
+
+  const handleTogglePassword = () => setShowPassword(!showPassword);
+
+  const validatePassword = (password) => {
+    return {
+      lengthValid: password.length >= 8 && password.length <= 16,
+      hasLower: /[a-z]/.test(password),
+      hasUpper: /[A-Z]/.test(password),
+      hasNumber: /[0-9]/.test(password),
+      hasSpecial: /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(password),
+    };
   };
+
   const handleSignUp = (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
-
-    if (name.length < 5) {
-      setNameError("Name should be more than 5 character");
-    } else {
-      setNameError("");
-    }
     const url = form.url.value;
     const email = form.email.value;
     const password = form.password.value;
-    if (password.length < 8) {
-      setErrorPassword("Password should be at least 8 character");
+    const confirmPassword = form.confirmPassword.value;
+
+    if (name.length < 5) {
+      setNameError("Name should be more than 5 characters");
+      return;
+    } else {
+      setNameError("");
+    }
+
+    const checks = validatePassword(password);
+    if (
+      !checks.lengthValid ||
+      !checks.hasLower ||
+      !checks.hasUpper ||
+      !checks.hasNumber ||
+      !checks.hasSpecial
+    ) {
+      setErrorPassword("Password must fulfill all requirements.");
+      return;
     } else {
       setErrorPassword("");
     }
-    const confirmPassword = form.confirmPassword.value;
 
     if (password !== confirmPassword) {
-      alert("Passwords do not match!");
+      setConfirmPasswordError("Passwords do not match!");
       return;
+    } else {
+      setConfirmPasswordError("");
     }
 
     createUser(email, password)
       .then((res) => {
         const user = res.user;
-
         updateUser({
           displayName: name,
           photoURL: url,
@@ -62,6 +87,7 @@ const SignUpPage = () => {
         console.error("Error:", error.code, error.message);
       });
   };
+
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then((res) => {
@@ -72,6 +98,8 @@ const SignUpPage = () => {
         console.log(error);
       });
   };
+
+  const passwordChecks = validatePassword(passwordInput);
 
   return (
     <div className="container mx-auto flex gap-10 items-center justify-center select-none">
@@ -101,6 +129,7 @@ const SignUpPage = () => {
               placeholder="Photo URL"
               required
             />
+
             {/* Email */}
             <label className="label text-primary">Email</label>
             <input
@@ -110,6 +139,7 @@ const SignUpPage = () => {
               placeholder="Email"
               required
             />
+
             {/* Password */}
             <label className="label text-primary">Password</label>
             <div className="relative">
@@ -118,6 +148,8 @@ const SignUpPage = () => {
                 type={showPassword ? "text" : "password"}
                 className="input border-none bg-primary/10 w-full focus:outline-primary/40"
                 placeholder="Password"
+                value={passwordInput}
+                onChange={(e) => setPasswordInput(e.target.value)}
               />
               <a
                 onClick={handleTogglePassword}
@@ -126,7 +158,48 @@ const SignUpPage = () => {
                 {showPassword ? <FaEye size={18} /> : <FaEyeSlash size={18} />}
               </a>
             </div>
+            {/* Password Rules */}
+            <div className="text-xs mt-1 ml-1 space-y-1 text-left">
+              <p
+                className={
+                  passwordChecks.lengthValid
+                    ? "text-green-600"
+                    : "text-gray-400"
+                }
+              >
+                ✓ 8–16 characters in length
+              </p>
+              <p
+                className={
+                  passwordChecks.hasLower ? "text-green-600" : "text-gray-400"
+                }
+              >
+                ✓ Lower case letter
+              </p>
+              <p
+                className={
+                  passwordChecks.hasUpper ? "text-green-600" : "text-gray-400"
+                }
+              >
+                ✓ Upper case letter
+              </p>
+              <p
+                className={
+                  passwordChecks.hasNumber ? "text-green-600" : "text-gray-400"
+                }
+              >
+                ✓ Numeric character
+              </p>
+              <p
+                className={
+                  passwordChecks.hasSpecial ? "text-green-600" : "text-gray-400"
+                }
+              >
+                ✓ Special character
+              </p>
+            </div>
             {errorPassword && <ErrorText>{errorPassword}</ErrorText>}
+
             {/* Confirm Password */}
             <label className="label text-primary">Confirm Password</label>
             <input
@@ -136,6 +209,9 @@ const SignUpPage = () => {
               placeholder="Confirm Password"
               required
             />
+            {confirmPasswordError && (
+              <ErrorText>{confirmPasswordError}</ErrorText>
+            )}
 
             <button
               type="submit"
@@ -143,7 +219,8 @@ const SignUpPage = () => {
             >
               Sign Up
             </button>
-            <div className="pt-5 border-secondary/40 border-t-2 border-dashed mt-4 ">
+
+            <div className="pt-5 border-secondary/40 border-t-2 border-dashed mt-4">
               <a
                 onClick={handleGoogleSignIn}
                 className="btn bg-white text-black border-secondary/20 shadow-sm shadow-secondary/20 w-full"
