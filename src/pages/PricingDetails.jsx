@@ -6,6 +6,7 @@ import StarRating from "../UI/StarRating";
 import { useEffect, useState } from "react";
 import { FaComment, FaStar } from "react-icons/fa";
 import CustomerReview from "../Components/CustomerReview";
+import { Toaster } from "react-hot-toast";
 
 const PricingDetails = () => {
   useEffect(() => {
@@ -48,6 +49,7 @@ const PricingDetails = () => {
 
   return (
     <div className="max-w-4xl mx-auto p-6">
+      <Toaster position="top-right" reverseOrder={false} />
       <div className="flex flex-col md:flex-row gap-6 text-primary">
         <div className="w-full md:w-1/2 relative">
           <img

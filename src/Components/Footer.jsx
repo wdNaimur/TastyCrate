@@ -5,14 +5,33 @@ import { FaFacebook, FaGithub, FaSquareXTwitter } from "react-icons/fa6";
 const Footer = () => {
   const links = (
     <>
-      <li className="text-lg list-none">
+      <li className="text-lg">
         <NavLink to="/" className="hover:bg-primary/30 px-3 py-2 rounded">
           Home
         </NavLink>
       </li>
-      <li className="text-lg list-none">
-        <NavLink to="/about" className="hover:bg-primary/30 px-3 py-2 rounded">
-          About
+      <li className="text-lg">
+        <NavLink
+          to="/my-subscription"
+          className="hover:bg-primary/30 px-3 py-2 rounded"
+        >
+          My Subscription
+        </NavLink>
+      </li>
+      <li className="text-lg">
+        <NavLink
+          to="/profile"
+          className="hover:bg-primary/30 px-3 py-2 rounded"
+        >
+          Profile
+        </NavLink>
+      </li>
+      <li className="text-lg">
+        <NavLink
+          to="/about-us"
+          className="hover:bg-primary/30 px-3 py-2 rounded"
+        >
+          About Us
         </NavLink>
       </li>
     </>
@@ -25,7 +44,9 @@ const Footer = () => {
             <img className="h-8" src="/logo/logo-dark.png" alt="footer-logo" />
           </div>
         </Link>
-        <div className="flex  items-center justify-center">{links}</div>
+        <div className="flex  items-center justify-center list-none">
+          {links}
+        </div>
       </aside>
       <nav>
         <div className="grid grid-flow-col gap-5 -mt-3">

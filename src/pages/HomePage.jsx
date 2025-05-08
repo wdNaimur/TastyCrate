@@ -4,6 +4,7 @@ import Testimonials from "../Components/Testimonials";
 import PricingCard from "../Components/PricingCard";
 import ChefCard from "../Components/ChefCard";
 import FaqSection from "../Components/FaqSection";
+import { Toaster } from "react-hot-toast";
 
 const HomePage = () => {
   useEffect(() => {
@@ -11,6 +12,7 @@ const HomePage = () => {
   }, []);
   return (
     <main>
+      <Toaster position="top-right" reverseOrder={false} />
       <section>
         <Hero />
       </section>

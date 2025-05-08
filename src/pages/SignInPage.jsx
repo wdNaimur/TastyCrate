@@ -3,7 +3,7 @@ import { AuthContext } from "../provider/AuthProvider";
 import { Link, useNavigate } from "react-router";
 import { useLocation } from "react-router";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { toast, ToastContainer } from "react-toastify";
+import toast, { Toaster } from "react-hot-toast";
 
 const SignInPage = () => {
   useEffect(() => {
@@ -21,7 +21,7 @@ const SignInPage = () => {
   const location = useLocation();
   useEffect(() => {
     if (location.state?.fromPrivateRoute) {
-      toast.warning("This is a private route. Please sign in.");
+      toast.error("Access Denied. Please sign in.");
     }
   }, [location]);
   const navigate = useNavigate();
@@ -33,17 +33,20 @@ const SignInPage = () => {
     userSignIn(email, password)
       .then((userCredential) => {
         const user = userCredential.user;
+        toast.success("Login Successful");
         navigate(location.state?.from || "/");
       })
       .catch((error) => {
         const errorCode = error.code;
         setError(errorCode);
+        toast.error("Login Failed");
       });
   };
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then((res) => {
         const user = res.user;
+        toast.success("Login Successful");
         navigate(`${location.state ? location.state.from : "/"}`);
       })
       .catch((error) => {
@@ -53,7 +56,7 @@ const SignInPage = () => {
 
   return (
     <div className="container mx-auto flex justify-center select-none">
-      <ToastContainer />
+      <Toaster position="top-right" reverseOrder={false} />
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl border-secondary/5 border-2">
         <div className="card-body">
           <div>

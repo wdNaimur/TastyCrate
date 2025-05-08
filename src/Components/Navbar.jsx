@@ -13,8 +13,11 @@ const navLink = (
       </NavLink>
     </li>
     <li className="text-lg">
-      <NavLink to="/about-us" className="hover:bg-primary/30 px-3 py-2 rounded">
-        About Us
+      <NavLink
+        to="/my-subscription"
+        className="hover:bg-primary/30 px-3 py-2 rounded"
+      >
+        My Subscription
       </NavLink>
     </li>
     <li className="text-lg">
@@ -23,11 +26,8 @@ const navLink = (
       </NavLink>
     </li>
     <li className="text-lg">
-      <NavLink
-        to="/my-subscription"
-        className="hover:bg-primary/30 px-3 py-2 rounded"
-      >
-        My Subscription
+      <NavLink to="/about-us" className="hover:bg-primary/30 px-3 py-2 rounded">
+        About Us
       </NavLink>
     </li>
   </>

@@ -1,7 +1,7 @@
 # TastyCrate
 
 **Purpose**:  
-TastyCrate is a curated subscription service delivering snacks and treats from around the world every month. Taste the world with every Tastycrate box.
+TastyCrate is a curated subscription service delivering snacks and treats from around the world every month. Taste the world with every TastyCrate box.
 
 **Live URL**:  
 [TastyCrate Live](https://tasty-crate.web.app/)
@@ -31,7 +31,7 @@ TastyCrate is a curated subscription service delivering snacks and treats from a
 **UI Enhancements**
 
 - React Icons
-- React Toastify – Toast notifications
+- React Hot Toast – Toast notifications
 - Swiper – Sliders
 - React Fast Marquee – Marquee effect
 - React Scroll – Smooth scrolling

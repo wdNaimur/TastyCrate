@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { useLocation } from "react-router";
+import { Toaster } from "react-hot-toast";
 
 const ForgetPassword = () => {
   useEffect(() => {
@@ -26,6 +27,7 @@ const ForgetPassword = () => {
   };
   return (
     <div className="container mx-auto flex justify-center select-none">
+      <Toaster position="top-right" reverseOrder={false} />
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl border-secondary/5 border-2">
         <div className="card-body">
           <div>

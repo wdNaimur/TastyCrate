@@ -1,16 +1,17 @@
 import React, { use } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link } from "react-router";
+import toast from "react-hot-toast";
 
 const Profile = ({ user }) => {
   const handleSignOut = () => {
     console.log("user trying to logout");
     userSignOut()
       .then(() => {
-        console.log("signOut successfully");
+        toast.success("Successfully logged out!");
       })
       .catch((error) => {
-        console.log(error);
+        toast.error("Failed to Logout");
       });
   };
   const { userSignOut } = use(AuthContext);

@@ -4,6 +4,7 @@ import ProfileDetails from "../Components/ProfileDetails";
 import { AuthContext } from "../provider/AuthProvider";
 import Loader from "../Components/Loader";
 import Footer from "../Components/Footer";
+import { Toaster } from "react-hot-toast";
 
 const ProfilePage = () => {
   useEffect(() => {
@@ -15,6 +16,7 @@ const ProfilePage = () => {
   }
   return (
     <div className="flex flex-col min-h-screen">
+      <Toaster position="top-right" reverseOrder={false} />
       <header>
         <Navbar />
       </header>

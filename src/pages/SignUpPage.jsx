@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import ErrorText from "../UI/ErrorText";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import toast, { Toaster } from "react-hot-toast";
 
 const SignUpPage = () => {
   useEffect(() => {
@@ -92,10 +93,11 @@ const SignUpPage = () => {
     googleSignIn()
       .then((res) => {
         const user = res.user;
+        toast.success("Successfully Created Account!");
         navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {
-        console.log(error);
+        toast.error("Failed to Created Account!");
       });
   };
 
@@ -103,6 +105,7 @@ const SignUpPage = () => {
 
   return (
     <div className="container mx-auto flex gap-10 items-center justify-center select-none">
+      <Toaster position="top-right" reverseOrder={false} />
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
         <div className="card-body">
           <h2 className="text-4xl font-bold lg:text-5xl text-primary">

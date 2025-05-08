@@ -18,7 +18,7 @@ const HomeLayout = () => {
         <header>
           <Navbar />
         </header>
-        <main className="pt-20 flex-1">
+        <main className="pt-20 flex-1 bg-base-100">
           <Outlet />
         </main>
         <footer>
