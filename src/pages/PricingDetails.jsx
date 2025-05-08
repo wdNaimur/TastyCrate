@@ -6,7 +6,7 @@ import StarRating from "../UI/StarRating";
 import { useEffect, useState } from "react";
 import { FaComment, FaStar } from "react-icons/fa";
 import CustomerReview from "../Components/CustomerReview";
-import { Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 const PricingDetails = () => {
   useEffect(() => {
@@ -38,13 +38,13 @@ const PricingDetails = () => {
 
     const alreadySubscribed = existing.find((item) => item.slug === crate.slug);
     if (alreadySubscribed) {
-      alert("You're already subscribed to this crate.");
+      toast.error("You're already subscribed to this crate.");
       return;
     }
 
     const updated = [...existing, crate];
     localStorage.setItem("userSubscriptions", JSON.stringify(updated));
-    alert("You’ve successfully subscribed to the " + crate.name + "!");
+    toast.success("You’ve successfully subscribed to the " + crate.name + "!");
   };
 
   return (

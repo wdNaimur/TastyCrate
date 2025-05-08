@@ -1,6 +1,7 @@
 import React, { use, useState, useEffect } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { FaPen } from "react-icons/fa6";
+import toast, { Toaster } from "react-hot-toast";
 
 const ProfileDetails = () => {
   const { user, updateUser } = use(AuthContext);
@@ -19,18 +20,19 @@ const ProfileDetails = () => {
       photoURL: url,
     })
       .then(() => {
-        alert("Profile updated successfully");
+        toast.success("Profile updated successfully");
         document.getElementById("my_modal_5").close();
         setReload((prev) => !prev);
       })
       .catch((error) => {
         console.log(error);
-        alert("Failed to update profile");
+        toast.error("Failed to update profile");
       });
   };
 
   return (
     <div className="card w-full shadow-sm container mt-20 px-4 mx-auto bg-primary/10 relative">
+      <Toaster position="top-center" reverseOrder={false} />
       <figure className="px-8 pt-8">
         <img
           src={user.photoURL}
