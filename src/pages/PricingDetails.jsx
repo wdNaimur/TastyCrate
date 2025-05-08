@@ -30,6 +30,7 @@ const PricingDetails = () => {
     e.preventDefault();
     const userReview = e.target.review.value;
     setReviewText(userReview);
+    toast.success("Successfully Review Submitted!");
     setSubmitted(true);
   };
   const handleSubscribe = () => {
