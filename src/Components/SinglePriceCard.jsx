@@ -15,7 +15,7 @@ const SinglePriceCard = ({ price }) => {
         <img
           className="w-full object-cover rounded-t-2xl"
           src={price.titleImage}
-          alt=""
+          alt={price.name}
         />
       </div>
       <div className="space-y-6 p-6">

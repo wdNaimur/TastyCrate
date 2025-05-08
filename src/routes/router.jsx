@@ -10,6 +10,10 @@ import PrivateRoute from "../provider/PrivateRoute";
 import Loader from "../Components/Loader";
 import ForgetPassword from "../pages/ForgetPassword";
 import ProfilePage from "../pages/ProfilePage";
+import TermsAndConditions from "../Components/TermsAndConditions";
+import PrivacyPolicy from "../Components/PrivacyPolicy";
+import AboutUs from "../Components/AboutUs";
+import MySubscription from "../pages/MySubscription";
 
 const router = createBrowserRouter([
   {
@@ -33,10 +37,18 @@ const router = createBrowserRouter([
         loader: () => fetch("/data/pricingCard.json"),
         hydrateFallbackElement: <Loader />,
       },
+      {
+        path: "about-us",
+        element: <AboutUs />,
+      },
 
       {
-        path: "about",
-        element: <h1>About</h1>,
+        path: "terms",
+        element: <TermsAndConditions />,
+      },
+      {
+        path: "privacy",
+        element: <PrivacyPolicy />,
       },
     ],
   },
@@ -64,6 +76,15 @@ const router = createBrowserRouter([
     element: (
       <PrivateRoute>
         <ProfilePage />
+      </PrivateRoute>
+    ),
+  },
+  {
+    path: "/my-subscription",
+
+    element: (
+      <PrivateRoute>
+        <MySubscription />
       </PrivateRoute>
     ),
   },

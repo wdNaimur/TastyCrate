@@ -1,12 +1,69 @@
-# React + Vite
+# TastyCrate
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Purpose**:  
+TastyCrate is a curated subscription service delivering snacks and treats from around the world every month. Taste the world with every Tastycrate box.
 
-Currently, two official plugins are available:
+**Live URL**:  
+[TastyCrate Live](https://tasty-crate.web.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack & Tools Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Framework & Build Tool**
+
+- React 19
+- Vite – Fast build tool
+
+**Styling**
+
+- Tailwind CSS 4
+- DaisyUI – Tailwind component library
+
+**Firebase**
+
+- Firebase – Authentication & Storage
+
+**Routing**
+
+- React Router 7
+
+**UI Enhancements**
+
+- React Icons
+- React Toastify – Toast notifications
+- Swiper – Sliders
+- React Fast Marquee – Marquee effect
+- React Scroll – Smooth scrolling
+
+---
+
+## ✨ Key Features
+
+- Curated monthly snack boxes
+- User authentication with Firebase
+- Smooth scrolling and responsive design
+- Interactive sliders and toast notifications
+- A world of tastes delivered to your doorstep
+
+---
+
+## 📦 NPM Packages Used
+
+- `react`
+- `vite`
+- `tailwindcss`
+- `daisyui`
+- `firebase`
+- `react-router-dom`
+- `react-icons`
+- `react-toastify`
+- `swiper`
+- `react-fast-marquee`
+- `react-scroll`
+
+---
+
+## 🎉 Live Demo
+
+Check out the live project: [TastyCrate Live](https://tasty-crate.web.app/)

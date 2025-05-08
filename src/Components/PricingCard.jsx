@@ -1,6 +1,7 @@
 import React, { Suspense, use } from "react";
 import SinglePriceCard from "./SinglePriceCard";
 import SectionHeading from "../UI/SectionHeading";
+import { Element } from "react-scroll";
 
 const pricingPromise = fetch("/data/pricingCard.json").then((res) =>
   res.json()
@@ -9,7 +10,7 @@ const PricingCard = () => {
   const pricingData = use(pricingPromise);
 
   return (
-    <div>
+    <Element name="Pricing-Section">
       <div className="mb-10">
         <SectionHeading subHeading="PRICING" heading="Choose your best plan" />
       </div>
@@ -19,7 +20,7 @@ const PricingCard = () => {
           <SinglePriceCard key={price.id} price={price} />
         ))}
       </div>
-    </div>
+    </Element>
   );
 };
 

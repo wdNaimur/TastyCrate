@@ -1,14 +1,16 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
-import { Outlet } from "react-router";
 import Footer from "../Components/Footer";
+import Subscription from "../Components/Subscription";
 
-const AuthenticationLayout = () => {
+const MySubscription = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <main className="pt-30 pb-15 flex-1">
-        <Outlet />
+      <header>
+        <Navbar />
+      </header>
+      <main className="pt-20 flex-1">
+        <Subscription />
       </main>
       <footer>
         <Footer />
@@ -17,4 +19,4 @@ const AuthenticationLayout = () => {
   );
 };
 
-export default AuthenticationLayout;
+export default MySubscription;

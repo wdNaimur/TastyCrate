@@ -1,6 +1,7 @@
 import React, { use } from "react";
 import Button from "../UI/Button";
 import { Link, NavLink } from "react-router";
+
 import { AuthContext } from "../provider/AuthProvider";
 import Profile from "./Profile";
 
@@ -12,13 +13,21 @@ const navLink = (
       </NavLink>
     </li>
     <li className="text-lg">
-      <NavLink to="/about" className="hover:bg-primary/30 px-3 py-2 rounded">
-        About
+      <NavLink to="/about-us" className="hover:bg-primary/30 px-3 py-2 rounded">
+        About Us
       </NavLink>
     </li>
     <li className="text-lg">
       <NavLink to="/profile" className="hover:bg-primary/30 px-3 py-2 rounded">
         Profile
+      </NavLink>
+    </li>
+    <li className="text-lg">
+      <NavLink
+        to="/my-subscription"
+        className="hover:bg-primary/30 px-3 py-2 rounded"
+      >
+        My Subscription
       </NavLink>
     </li>
   </>
@@ -27,9 +36,9 @@ const navLink = (
 const Navbar = () => {
   const { user } = use(AuthContext);
   return (
-    <div className="fixed top-0 left-0 w-full bg-white z-50 ">
+    <div className="fixed top-0 left-0 w-full bg-white z-50 h-20 my-auto">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="navbar text-primary">
+        <div className="navbar border-none text-primary">
           <div className="navbar-start">
             <div className="dropdown">
               <button tabIndex={0} className="btn btn-ghost lg:hidden">

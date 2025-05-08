@@ -1,23 +1,30 @@
-import React, { use } from "react";
+import React, { use, useEffect } from "react";
 import Navbar from "../Components/Navbar";
 import ProfileDetails from "../Components/ProfileDetails";
 import { AuthContext } from "../provider/AuthProvider";
 import Loader from "../Components/Loader";
+import Footer from "../Components/Footer";
 
 const ProfilePage = () => {
-  const { user, loading } = use(AuthContext);
+  useEffect(() => {
+    document.title = "Tastycrate | Profile";
+  }, []);
+  const { loading } = use(AuthContext);
   if (loading) {
     return <Loader />;
   }
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <header>
         <Navbar />
       </header>
 
-      <main>
+      <main className="flex-1">
         <ProfileDetails />
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 };

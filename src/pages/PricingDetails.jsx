@@ -5,6 +5,7 @@ import { TiTick } from "react-icons/ti";
 import StarRating from "../UI/StarRating";
 import { useEffect, useState } from "react";
 import { FaComment, FaStar } from "react-icons/fa";
+import CustomerReview from "../Components/CustomerReview";
 
 const PricingDetails = () => {
   useEffect(() => {
@@ -30,11 +31,25 @@ const PricingDetails = () => {
     setReviewText(userReview);
     setSubmitted(true);
   };
+  const handleSubscribe = () => {
+    const existing =
+      JSON.parse(localStorage.getItem("userSubscriptions")) || [];
+
+    const alreadySubscribed = existing.find((item) => item.slug === crate.slug);
+    if (alreadySubscribed) {
+      alert("You're already subscribed to this crate.");
+      return;
+    }
+
+    const updated = [...existing, crate];
+    localStorage.setItem("userSubscriptions", JSON.stringify(updated));
+    alert("You’ve successfully subscribed to the " + crate.name + "!");
+  };
 
   return (
     <div className="max-w-4xl mx-auto p-6">
       <div className="flex flex-col md:flex-row gap-6 text-primary">
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 relative">
           <img
             src={crate.image}
             alt={crate.name}
@@ -47,13 +62,18 @@ const PricingDetails = () => {
             {crate.tag}
           </span>
           <h1 className="text-primary text-3xl font-bold mb-2">{crate.name}</h1>
-          <p className="text-primary mb-4">{crate.description}</p>
-          <div className="text-2xl font-semibold text-secondary">
-            {crate.price}
-            <span className="text-sm text-primary">{crate.frequency}</span>
+
+          <p className="text-primary mb-2">{crate.description}</p>
+          <div className="text-2xl font-semibold text-secondary flex  justify-between items-center">
+            <div>
+              {crate.price}
+              <span className="text-sm text-primary">{crate.frequency}</span>
+            </div>
+
+            <CustomerReview rating={4.7} reviewsCount={40} />
           </div>
 
-          <div className="mt-8">
+          <div className="mt-6">
             <h2 className="text-xl font-semibold mb-3">What’s Included</h2>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {crate.features.map((feature, index) => (
@@ -125,7 +145,9 @@ const PricingDetails = () => {
       </div>
 
       <div className="mt-10 text-center">
-        <Button>Subscribe Now</Button>
+        <button onClick={handleSubscribe}>
+          <Button>Subscribe Now</Button>
+        </button>
       </div>
     </div>
   );

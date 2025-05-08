@@ -22,11 +22,7 @@ const Footer = () => {
       <aside>
         <Link to="/">
           <div className="flex items-center gap-3 select-none cursor-pointer group">
-            <img
-              className="h-8"
-              src="/public/logo/logo-dark.png"
-              alt="footer-logo"
-            />
+            <img className="h-8" src="/logo/logo-dark.png" alt="footer-logo" />
           </div>
         </Link>
         <div className="flex  items-center justify-center">{links}</div>
@@ -51,6 +47,20 @@ const Footer = () => {
               className="cursor-pointer hover:text-secondary transition-all ease-linear active:scale-95 hover:scale-105"
             />
           </a>
+        </div>
+        <div className="flex  gap-4">
+          <Link
+            className="link text-primary hover:text-secondary hover:scale-105 transition-all ease-linear"
+            to="/terms"
+          >
+            terms and Conditions
+          </Link>
+          <Link
+            className="link text-primary hover:text-secondary hover:scale-105 transition-all ease-linear"
+            to="/privacy"
+          >
+            privacy policy
+          </Link>
         </div>
       </nav>
     </footer>

@@ -22,7 +22,9 @@
       "Perfect for light snacking",
       "Balanced sweet and salty items",
       "Ships within 3–5 business days"
-    ]
+    ],
+    "rating": 4.3,
+    "reviewsCount": 98
   },
   {
     "id": 2,
@@ -47,7 +49,9 @@
       "Mix of local and international snacks",
       "Hand-packed with care",
       "Customer favorites included monthly"
-    ]
+    ],
+    "rating": 4.7,
+    "reviewsCount": 243
   },
   {
     "id": 3,
@@ -72,6 +76,8 @@
       "Includes member-only perks and samples",
       "Perfect for gifting or group sharing",
       "Fastest shipping option included"
-    ]
+    ],
+    "rating": 4.9,
+    "reviewsCount": 387
   }
 ]

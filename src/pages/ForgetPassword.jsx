@@ -1,16 +1,19 @@
 import React, { useContext, useEffect } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import { useLocation } from "react-router";
 
 const ForgetPassword = () => {
   useEffect(() => {
     document.title = "Tastycrate | Reset Password";
   }, []);
+  const location = useLocation();
+  const prevEmail = location.state.state.email;
   const { resetPassword } = useContext(AuthContext);
   const handleForgotPassword = (e) => {
     e.preventDefault();
-    const email = e.target.email.value;
+    const resetEmail = e.target.email.value;
 
-    resetPassword(email)
+    resetPassword(resetEmail)
       .then(() => {
         console.log("password change email sent");
       })
@@ -37,6 +40,7 @@ const ForgetPassword = () => {
               type="email"
               className="input border-none bg-primary/10 w-full focus:outline-primary/40"
               placeholder="Email"
+              defaultValue={prevEmail}
             />
 
             <button

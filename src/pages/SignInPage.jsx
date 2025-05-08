@@ -13,12 +13,12 @@ const SignInPage = () => {
   const { userSignIn, googleSignIn } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
   const handleTogglePassword = () => {
     return setShowPassword(!showPassword);
   };
 
   const location = useLocation();
-  console.log(location);
   useEffect(() => {
     if (location.state?.fromPrivateRoute) {
       toast.warning("This is a private route. Please sign in.");
@@ -66,6 +66,7 @@ const SignInPage = () => {
             <input
               name="email"
               type="email"
+              onChange={(e) => setEmail(e.target.value)}
               className="input border-none bg-primary/10 w-full focus:outline-primary/40"
               placeholder="Email"
             />
@@ -91,6 +92,7 @@ const SignInPage = () => {
 
               <Link
                 to="/auth/forgot-password"
+                state={{ state: { email } }}
                 className="link link-hover text-primary"
               >
                 Forgot password?
