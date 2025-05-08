@@ -38,7 +38,7 @@ const SingleSubscription = ({ singleSubscription, onDelete }) => {
             <td>{singleSubscription.price}</td>
             <th>
               <button onClick={handleDelete} className="btn btn-primary btn-xs">
-                details
+                Delete
               </button>
             </th>
           </tr>
