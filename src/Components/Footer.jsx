@@ -44,7 +44,7 @@ const Footer = () => {
             <img className="h-8" src="/logo/logo-dark.png" alt="footer-logo" />
           </div>
         </Link>
-        <div className="flex  items-center justify-center list-none">
+        <div className="flex sm:flex-row flex-col items-center justify-center list-none gap-y-2 pt-2">
           {links}
         </div>
       </aside>
