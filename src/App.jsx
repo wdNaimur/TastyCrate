@@ -28,7 +28,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      <p>This is test from main brunch to push directly in the github</p>
+      <p>This is test from main brunch to push directly in the github</p>github
     </>
   )
 }
